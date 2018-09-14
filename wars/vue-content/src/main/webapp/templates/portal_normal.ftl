@@ -19,6 +19,8 @@
 
 <body style="min-width: unset !important;">
 	
+	<@liferay_util["include"] page=body_top_include />
+	
 	<#if selectable>
 		<@liferay_util["include"] page=content_include />
 	<#else>

@@ -94,6 +94,7 @@ public class Engine implements MessageListener {
 				}								
 			}
 			else if ("org.opencps.dossiermgt.model.DossierDocument".equals(className)) {
+				
 				JSONObject jsonData = JSONFactoryUtil.createJSONObject();
 				try {
 					jsonData = JSONFactoryUtil.createJSONObject(msgData.getString("formData"));

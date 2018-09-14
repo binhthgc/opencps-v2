@@ -12995,3 +12995,31 @@ body #frmEstablishedProcess {
  body .mBody .checkbox label {
  line-height: 20px;
  }
+ .alert-notifications-fixed {
+	    right: 15px;
+    top: 80px;
+}
+
+.alert.alert-danger.fade.alert-dismissible.show {
+	    border: 1px solid #C62828 !important;
+    padding: 15px;
+    border-radius: 4px;
+    background: #c62828c9;
+    color: #fff;
+    font-weight: bold;
+}
+
+.alert.alert-danger.fade.alert-dismissible.show .close {
+	    background: transparent;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 18px;
+    width: 18px;
+}
+.alert.alert-danger.fade.alert-dismissible.show .close svg {
+	    width: 8px;
+}
+.alert.alert-danger.fade.alert-dismissible.show .alert-indicator {
+	display: none;
+}

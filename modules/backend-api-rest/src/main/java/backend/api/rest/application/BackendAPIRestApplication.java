@@ -128,9 +128,26 @@ public class BackendAPIRestApplication extends Application {
 	
 	private static Log _log = LogFactoryUtil.getLog(BackendAPIRestApplication.class);
 	
+
+	@Reference
+	private CompanyContextProvider _companyContextProvider;
+
+	@Reference
+	private LocaleContextProvider _localeContextProvider;
+
+	@Reference
+	private UserContextProvider _userContextProvider;
+
+	@Reference
+	private ServiceContextProvider _serviceContextProvider;
+	
 	public Set<Object> getSingletons() {
 		Set<Object> singletons = new HashSet<Object>();
 		
+		singletons.add(_userContextProvider);
+		singletons.add(_companyContextProvider);
+		singletons.add(_localeContextProvider);
+		singletons.add(_serviceContextProvider);
 		
 		// add REST endpoints (resources)
 		singletons.add(new ApplicantManagementImpl());
@@ -182,11 +199,7 @@ public class BackendAPIRestApplication extends Application {
 		
 		singletons.add(new SystemManagementImpl());
 		
-		// add service provider
-		singletons.add(_serviceContextProvider);
-		singletons.add(_companyContextProvider);
-		singletons.add(_localeContextProvider);
-		singletons.add(_userContextProvider);
+		singletons.add(this);
 		
 		return singletons;	
 	}
@@ -404,17 +417,6 @@ public class BackendAPIRestApplication extends Application {
     @Context
     private UriInfo uriInfo;
     
-	@Reference
-	private CompanyContextProvider _companyContextProvider;
-
-	@Reference
-	private LocaleContextProvider _localeContextProvider;
-
-	@Reference
-	private UserContextProvider _userContextProvider;
-
-	@Reference
-	private ServiceContextProvider _serviceContextProvider;
 
 
 }
